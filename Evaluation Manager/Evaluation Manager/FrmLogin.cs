@@ -39,5 +39,10 @@ namespace Evaluation_Manager
                 MessageBox.Show("Wrong credetials!");
             }
         }
+
+        private void FrmLogin_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
