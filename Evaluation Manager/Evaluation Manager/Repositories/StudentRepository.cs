@@ -9,7 +9,7 @@ using Evaluation_Manager.Models;
 
 namespace Evaluation_Manager.Repositories
 {
-    public class StudentRepository
+    public static class StudentRepository
     {
         public static Student GetStudent(int id)
         {

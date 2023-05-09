@@ -18,8 +18,6 @@ namespace Evaluation_Manager
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-            DB.SetConfiguration("PI2023_my-base_DB", "student", "student");
-
             Application.Run(new FrmLogin());
         }
     }
