@@ -9,7 +9,7 @@ using Evaluation_Manager.Models;
 
 namespace Evaluation_Manager.Repositories
 {
-    public class ActivityRepository
+    public static class ActivityRepository
     {
         public static Activity GetActivity(int id)
         {
@@ -27,7 +27,7 @@ namespace Evaluation_Manager.Repositories
             return activity;
         }
 
-        public static List<Activity> GetStudents()
+        public static List<Activity> GetActivities()
         {
             List<Activity> activities = new List<Activity>();
             string sql = "SELECT * FROM Activities";
