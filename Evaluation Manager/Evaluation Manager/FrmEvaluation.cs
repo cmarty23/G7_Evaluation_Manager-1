@@ -39,6 +39,12 @@ namespace Evaluation_Manager
             txtActivityDescription.Text = selectedActivity.Description;
             txtMinForGrade.Text = selectedActivity.MinPointsForGrade.ToString();
             txtMinForSignature.Text = selectedActivity.MinPointsForSignature.ToString();
+
+            Evaluation evaluation = EvaluationRepository.GetEvaluation(selectedStudent, selectedActivity);
+
+            numPoints.Value = evaluation.Points;
+            txtTeacher.Text = evaluation.Evaluator.ToString();
+            txtEvaluationDate.Text = evaluation.EvaluationDateTime.ToString();
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
