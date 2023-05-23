@@ -28,6 +28,23 @@ namespace Evaluation_Manager.Repositories
             return evaluation;
         }
 
+        public static List<Evaluation> GetEvaluations(Student student)
+        {
+            List<Evaluation> evaluations = new List<Evaluation>();
+            string sql = $"SELECT * FROM Evaluations WHERE IdStudents = {student.Id}";
+            DB.OpenConnection();
+
+            var reader = DB.GetDataReader(sql);
+            while (reader.Read())
+            {
+                evaluations.Add(CreateObject(reader));
+            }
+            reader.Close();
+
+            DB.CloseConnection();
+            return evaluations;
+        }
+
         private static Evaluation CreateObject(SqlDataReader dr)
         {
             return new Evaluation
